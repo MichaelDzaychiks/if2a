@@ -16,7 +16,7 @@ class FakultasController extends Controller
         $result = Fakultas::all(); //select * from Fakultas
         // dd($result);
         // return view('fakultas.index', $result);
-        return view('periode.index',compact('result'));
+        return view('fakultas.index',compact('result'));
     }
 
     /**
