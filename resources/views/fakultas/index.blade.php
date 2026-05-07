@@ -1,6 +1,4 @@
-@extends(
-    'main'
-)
+@extends('main')
 
 @section('content')
     <h1>Fakultas</h1>

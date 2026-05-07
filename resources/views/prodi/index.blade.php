@@ -1,3 +1,9 @@
+@extends('main')
+
+@section('title','Program Studi')
+
+@section('content')
+
 <h1>Data Prodi</h1>
 
 <table border="1" cellpadding="10">
@@ -17,3 +23,5 @@
             <td>{{$prodi->fakultas->nama_fakultas ?? '-'}}</td>
         </tr>
     @endforeach
+</table>
+@endsection
