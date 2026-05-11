@@ -355,7 +355,12 @@
                     <p>Prodi</p> 
                 </a> 
             </li>
-
+            <li class="nav-item">
+              <a href="{{ route('periode.index') }}" class="nav-link">
+                <i class="nav-icon bi bi-building"></i>
+                <p>Periode</p>
+              </a>
+            </li>
             </ul>
             <!--end::Sidebar Menu-->
           </nav>
