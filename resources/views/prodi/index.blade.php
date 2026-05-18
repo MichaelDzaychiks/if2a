@@ -3,10 +3,10 @@
 @section('title','Program Studi')
 
 @section('content')
-
+<a href="{{ route('prodi.create') }}" class="btn btn-primary">Tambah Prodi</a>
 <h1>Data Prodi</h1>
 
-<table border="1" cellpadding="10">
+<table class="table table-bordered">
     <tr>
         <th>No</th>
         <th>Nama Prodi</th>

@@ -14,9 +14,5 @@ Route::get('/tentang', function() {
 });
 
 Route::resource('/fakultas',FakultasController::class);
-
 Route::resource('/periode',PeriodeController::class);
-
 Route::resource('/prodi',ProdiController::class);
-// Route::resource('prodi', ProdiController::class);
-// Route::resource('prodi', App\Http\Controllers\ProdiController::class);
