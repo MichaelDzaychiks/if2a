@@ -24,8 +24,9 @@ class ProdiController extends Controller
      */
     public function create()
     {
+        $prodi = Prodi::all();
        $fakultas = Fakultas::all();
-       return view('Prodi.create',compact('fakultas'));
+       return view('Prodi.create',compact('prodi','fakultas'));
     }
 
     /**
@@ -35,7 +36,7 @@ class ProdiController extends Controller
     {
          // validasi input
         $input = $request->validate([
-            'nama_prodi' => 'required|unique:fakultas',
+            'nama_prodi' => 'required|unique:prodis',
             'singkatan' => 'required',
             'kaprodi' => 'required',
             'fakultas_id' => 'required'
@@ -61,7 +62,9 @@ class ProdiController extends Controller
      */
     public function edit(Prodi $prodi)
     {
-        //
+        $prodi = Prodi::find($prodi);
+        $fakultas = Fakultas::all();
+        return view('prodi.edit', compact('prodi','fakultas'));
     }
 
     /**
@@ -69,7 +72,16 @@ class ProdiController extends Controller
      */
     public function update(Request $request, Prodi $prodi)
     {
-        //
+        $input = $request->validate([
+            'nama_prodi' => 'required|unique:prodis',
+            'singkatan' => 'required',
+            'kaprodi' => 'required',
+            'fakultas_id' => 'required'
+        ]);
+
+        Prodi::where('id',$prodi)->update($input);
+
+        return redirect()->route('prodi.index');
     }
 
     /**
@@ -77,6 +89,8 @@ class ProdiController extends Controller
      */
     public function destroy(Prodi $prodi)
     {
-        //
+        $prodi = Prodi::find($prodi,'id');
+        $prodi->delete();
+        return redirect()->route('prodi.index');
     }
 }
