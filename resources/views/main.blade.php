@@ -270,6 +270,20 @@
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
                   <a href="#" class="btn btn-outline-secondary">Profile</a>
+                  <a href="#" class="btn btn-outline-secondary">Profile</a>
+
+                <!-- Bagian di bawah ini yang ditambahkan -->
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                @csrf
+
+                <x-dropdown-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                    this.closest('form').submit();"
+                    class="btn btn-outline-danger float-end">
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+                </form>
                   <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->
